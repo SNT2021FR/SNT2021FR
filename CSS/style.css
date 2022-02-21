@@ -1,0 +1,166 @@
+/*Void*/
+:root{
+    --primary: #282a36;;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/*Menu*/
+nav {
+  width: 100%;
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+nav div {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  width: fit-content;
+
+}
+
+nav li {
+  list-style-type: none;
+  float: left;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 20px 30px;
+  color: white;
+}
+
+
+/*Body*/
+.quote {
+  font-style: italic;
+}
+
+.title-header {
+  color: white;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 75px;
+}
+
+.title-header2 {
+  color: white;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+.header-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    position: relative;
+}
+
+.titre {
+  font-size: 75px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 4rem;
+}
+
+.description {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 4rem;
+  text-align: left;
+}
+  
+
+/*Animation menu*/
+.menu-link:hover {
+  border-top: 5px solid white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-link {
+  transition: background-color 0.4s;
+}
+
+nav li:hover a {
+  padding: 15px 30px 20px 30px;
+}
+
+
+/*Backgrounds*/
+.background {
+    height: 100vh;
+    filter: brightness(0.7);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.video {
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  filter: brightness(0.7);
+}
+
+.background#paf {
+    background-image: url(../Pictures/paf.jpg);
+}
+
+.background#dr400 {
+  background-image: url(../Pictures/dr400.jpg);
+}
+
+.background#oleron {
+  background-image: url(../Pictures/oleron.jpg);
+}
+
+.background#boyardville{
+  background-image: url(../Pictures/boyardville.jpg);
+}

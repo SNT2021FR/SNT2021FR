@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <title>SNT</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">  
+         <nav>
+            <div class="menu">
+                <li class="menu-link"><a href="#presentation">Présentation</a></li>
+                <li class="menu-link"><a href="#ambitions">Mes ambitions</a></li>
+                <li class="menu-link"><a href="#cv">Diplômes</a></li>
+                <li class="menu-link"><a href="#contact">Contact</a></li>
+            </div>
+        </nav> 
+    </div>
+    <div class="body">
+        <div class="header-body rect" id="header-body">
+            <video class="video" src="Pictures/tdp.mp4" autoplay loop muted></video>
+            <h1 class="title-header">Félix ROCHEFORT</h1><br>
+            <p class="title-header2"><q class="quote title-header2">Fais de ta vie un rêve, et d'un rêve, une réalité</q> Antoine de Saint Exupéry</p>
+        </div>
+        <div class="content rect" id="presentation">
+            <div class="background" id="paf"></div>
+            <h1 class="titre">Présentation</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+        </div>
+        <div class="content rect" id="ambitions">
+            <div class="background" id="dr400"></div>
+            <h1 class="titre">Ambitions</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+        </div>
+        <div class="content rect" id="cv">
+            <div class="background" id="oleron"></div>
+            <h1 class="titre">Diplômes</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+        </div>
+        <div class="content rect" id="contact">
+            <div class="background" id="boyardville"></div>
+            <h1 class="titre">Contact</h1>
+            <p class="description">Email : felix.rorchefort24@gmail.com<br>Téléphone : 06 14 20 54 60</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="contact">
+
+        </div>
+    </div>
+    <script>
+      let lastY = 0, temps = 500;//en milisecondes
+      let enCours = false;
+      let coords = new Array();
+      let index = 0;
+ 
+      window.addEventListener("load", (e) =>{
+        let rects = document.querySelectorAll(".rect");
+        rects.forEach(element =>{
+          coords.push(element.getBoundingClientRect().y);
+        });
+        console.log(JSON.stringify(coords));//on affiche les coordonnées dans la console
+      });
+ 
+ 
+      window.addEventListener("scroll", (e)=>{
+        if (enCours) { //si un scroll est en cours, on ne fait rien
+          return;
+        }
+        if ( window.scrollY.toFixed() > lastY){
+          anim("descend");
+        } else if ( window.scrollY.toFixed() < lastY){
+          anim("monte");
+        }
+        lastY = window.scrollY.toFixed();
+      });
+ 
+       
+ 
+      function anim(sens){
+        enCours = true;
+        if (sens == "descend"){
+          index +=1;
+          if (index >= coords.length) index = coords.length;
+        }
+        else if (sens == "monte"){
+          index -=1;
+          if (index < 0) index = 0;
+        }
+ 
+        //en jquery pour l'animate, car le smooth de scrollTo en js ne marche pas avec internet explorer
+        $("body").animate({scrollTop:coords[index]}, 500, "swing", (e)=>{
+          enCours = false;
+          lastY = window.scrollY.toFixed();
+        });
+      }
+    </script>
+</body>
+</html>
