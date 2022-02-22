@@ -88,6 +88,11 @@ nav a {
     position: relative;
 }
 
+.rect {
+  position: relative;
+  height: 100vh;
+}
+
 .titre {
   font-size: 75px;
   font-weight: bold;
