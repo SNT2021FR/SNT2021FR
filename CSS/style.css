@@ -136,6 +136,21 @@ nav a {
   font-size: 20px;
 }
 
+
+/*Animation menu*/
+.menu-link:hover {
+  border-top: 5px solid white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-link {
+  transition: background-color 0.4s;
+}
+
+nav li:hover a {
+  padding: 15px 30px 20px 30px;
+}
+
 /*Body*/
 .quote {
   font-style: italic;
@@ -213,21 +228,6 @@ nav a {
 }
 
 
-/*Animation menu*/
-.menu-link:hover {
-  border-top: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.menu-link {
-  transition: background-color 0.4s;
-}
-
-nav li:hover a {
-  padding: 15px 30px 20px 30px;
-}
-
-
 /*Backgrounds*/
 .background {
     height: 100vh;
@@ -254,17 +254,17 @@ nav li:hover a {
 }
 
 .background#paf {
-    background-image: url(../Pictures/paf.jpg);
+    background-image: url(../Pictures/paf-min.jpg);
 }
 
 .background#dr400 {
-  background-image: url(../Pictures/dr400.jpg);
+  background-image: url(../Pictures/dr400-min.jpg);
 }
 
 .background#oleron {
-  background-image: url(../Pictures/oleron.jpg);
+  background-image: url(../Pictures/oleron-min.jpg);
 }
 
 .background#boyardville{
-  background-image: url(../Pictures/boyardville.jpg);
+  background-image: url(../Pictures/boyardville-min.jpg);
 }
