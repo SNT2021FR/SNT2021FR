@@ -9,17 +9,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
+    
 </head>
 <body>
-    <div class="header">  
-         <nav>
-            <div class="menu">
+    <div class="loader"></div>
+    <div class="header"id="header" >  
+        <div class="menu">
+            <nav>
+                <p class="name">Félix ROCHEFORT</p>
                 <li class="menu-link"><a href="#presentation">Présentation</a></li>
-                <li class="menu-link"><a href="#ambitions">Mes ambitions</a></li>
+                <li class="menu-link"><a href="#ambitions">Mes activités</a></li>
                 <li class="menu-link"><a href="#cv">Diplômes</a></li>
                 <li class="menu-link"><a href="#contact">Contact</a></li>
-            </div>
-        </nav> 
+            
+            </nav>
+        </div> 
     </div>
     <div class="body">
         <div class="header-body rect" id="header-body">
@@ -30,71 +34,37 @@
         <div class="content rect" id="presentation">
             <div class="background" id="paf"></div>
             <h1 class="titre">Présentation</h1>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+            <p class="description">Je suis étudiant au lycée Saint Pierre, j'ai 15 ans et je suis passionné d'aviation.</p>
         </div>
         <div class="content rect" id="ambitions">
             <div class="background" id="dr400"></div>
-            <h1 class="titre">Ambitions</h1>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+            <h1 class="titre">Mes activités</h1>
+            <p class="description">
+                <ul class="liste">
+                    <li>Aviation (simulateur de vol, expériences dans des aéroclubs)</li>
+                    <li>Codage (HTML, CSS, JS, PHP, Python, Arduino) => <a href="https://www.eagvschool.me">EAGVSCHOOL.ME</a></li>
+                    <li>Sports (escalade, volley...)</li>
+                </ul>
+            </p>
         </div>
         <div class="content rect" id="cv">
             <div class="background" id="oleron"></div>
             <h1 class="titre">Diplômes</h1>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+            <p class="description">
+                <ul class="liste">
+                    <li>Brevet d'Initiation Aéronautique (BIA)</li>
+                    <li>LAPL théorique (Epreuve commune)</li>
+                    <li>Diplôme National du Brevet (DNB)</li>
+                </ul>
+            </p>
         </div>
         <div class="content rect" id="contact">
             <div class="background" id="boyardville"></div>
             <h1 class="titre">Contact</h1>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo sapiente quas alias ex dolorum reprehenderit aut magni nam mollitia earum, amet nihil ratione quis harum voluptatibus a ducimus quos?</p>
+            <p class="description">Email : felix.rochefort24@gmail.com<br>Adresse : Montgeron, 91230, France</p>
         </div>
+        <a href="#header" class="button" id="top-button">Remonter</a>
     </div>
-    <div class="footer">
-        <div class="contact">
-
-        </div>
-    </div>
-    <script>
-      let lastY = 0, temps = 500;
-      let enCours = false;
-      let coords = new Array();
-      let index = 0;
-      
-      window.addEventListener("load", (e) =>{
-      let rects = document.querySelectorAll(".rect");
-      rects.forEach(element =>{
-          coords.push(element.getBoundingClientRect().y);
-      });
-      console.log(JSON.stringify(coords));
-      });
-      
-      window.addEventListener("scroll", (e)=>{
-      if (enCours) {
-          return;
-      }
-      if (window.scrollY.toFixed() > lastY){
-          anim("descend");
-      } else if ( window.scrollY.toFixed() < lastY){
-          anim("monte");
-      }
-      lastY = window.scrollY.toFixed();
-      });    
-
-      function anim(sens){
-      enCours = true;
-      if (sens == "descend"){
-          index +=1;
-          if (index >= coords.length) index = coords.length;
-      }
-      else if (sens == "monte"){
-          index -=1;
-          if (index < 0) index = 0;
-      }
-      
-      $("body, html").animate({scrollTop:coords[index]}, 500, "swing", (e)=>{
-          enCours = false;
-          lastY = window.scrollY.toFixed();
-      });
-      }
-      </script>
+    <script type="text/javascript" src="JS/app.js"></script>
 </body>
 </html>

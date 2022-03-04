@@ -9,20 +9,104 @@ body {
     padding: 0;
     font-family: Verdana, sans-serif;
     overflow-x: hidden;
+    font-weight: normal;
 }
 
 
+/*ScroolBar*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 31px none #ffffff;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #282a3627;;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #a3a3a3;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/*Loader*/
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fondu-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  display: none;
+}
+
+/*Button*/
+.button#top-button {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  border: white 3px solid;
+  border-radius: 10px;
+  padding: 10px 10px;
+  display: none;
+}
+
+.button#top-button:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.button {
+  transition: background-color 0.4s, border 0.4s, color 0.4s;
+}
+
 /*Menu*/
 nav {
+  margin: 0;
   width: 100%;
   background-color: var(--primary);
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-
 }
 
 nav div {
@@ -36,7 +120,7 @@ nav div {
 
 nav li {
   list-style-type: none;
-  float: left;
+  float: right;
 }
 
 nav a {
@@ -45,7 +129,12 @@ nav a {
   padding: 20px 30px;
   color: white;
 }
-
+.name {
+  color: white;
+  margin-right: 34rem;
+  font-weight: bold;
+  font-size: 20px;
+}
 
 /*Body*/
 .quote {
@@ -104,7 +193,7 @@ nav a {
 }
 
 .description {
-  font-size: 50px;
+  font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +201,17 @@ nav a {
   margin: 4rem;
   text-align: left;
 }
-  
+
+.liste {
+  text-align: left;
+  color: white;
+  font-size: 30px;
+}
+
+.liste a {
+  color: white;
+}
+
 
 /*Animation menu*/
 .menu-link:hover {
