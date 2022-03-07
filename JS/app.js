@@ -9,7 +9,9 @@ window.addEventListener('scroll', () => {
 });
 
 const loader = document.querySelector('.loader');
+const site = document.querySelector('.site');
 
-window.addEventListener('load', () => {
-  loader.classList.add('fondu-out');
+window.addEventListener('DOMContentLoaded', () => {
+    loader.classList.add('fondu-out');
+    site.style.display="block"
 });
