@@ -12,10 +12,6 @@ body {
     font-weight: normal;
 }
 
-.site {
-  display: none;
-}
-
 /*ScroolBar*/
 ::-webkit-scrollbar {
   width: 10px;
@@ -98,6 +94,7 @@ body {
 .button {
   transition: background-color 0.4s, border 0.4s, color 0.4s;
 }
+
 
 /*Menu*/
 nav {
