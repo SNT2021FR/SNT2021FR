@@ -13,3 +13,9 @@ const loader = document.querySelector('.loader');
 window.addEventListener('load', () => {
     loader.classList.add('fondu-out');
 });
+
+const checkbox = document.getElementsByClassName('checkbox')[0];
+
+checkbox.addEventListener('click', () => {
+    alert('Merci d\' avoir lu le site !');
+});
