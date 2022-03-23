@@ -17,5 +17,5 @@ window.addEventListener('load', () => {
 const checkbox = document.getElementsByClassName('checkbox')[0];
 
 checkbox.addEventListener('click', () => {
-    alert('Merci d\' avoir lu le site !');
+    alert('Merci d\'avoir lu le site !');
 });
